@@ -3,8 +3,8 @@
     margin:0;
 }
 .principal{
-    background-color: #00DBDE;
-    background-image: linear-gradient(90deg, #00DBDE 0%, #f8abf9a1 100%);
+    background-color: #00DBDE;  
+    background-image: linear-gradient(90deg, #004f50 0%, #6702689e 100%);
     height: 100vh;
     display: flex;
     /* display: block; */
