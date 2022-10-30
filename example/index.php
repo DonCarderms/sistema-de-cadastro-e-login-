@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>meu primeiro servidor</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -15,13 +15,23 @@
             <div class="align_center">
                  <img class="m-50" width="100" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Commons-logo-square.png" alt="logo">
             </div>
+
+            <div class="msg">
+                <?php
+
+                    if(isset($_SESSION['msg'] )){
+                        echo $_SESSION['msg'];
+                        unset($_SESSION['msg']);
+                    }
+                ?>
+            </div>
            
-            <form action="cadastro.php" method="POST" class="login" id="login" >
+            <form action="login.php" method="POST" class="login" id="login" >
                 <input type="email" name="email" placeholder="Email" required class="input-style width-100" ><br>
 
                 <input type="password" name="senha"  placeholder="Senha" class="input-style width-100" ><br>
                 <div class="align_center">
-                    <button type="button" class="button-style">Entrar</button>         
+                    <button type="submit" class="button-style">Entrar</button>         
                 </div>
                 <div class="button-cadastrar align_center">
                     <button onclick="showRegister()" type="button" class="button-style" id="button-cadastrar" >cadastrar-se</button>

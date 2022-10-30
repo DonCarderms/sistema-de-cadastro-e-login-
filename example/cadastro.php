@@ -10,8 +10,10 @@
     $sql = "INSERT INTO `usuario` (`nome`, `sobrenome`, `email`, `senha`) VALUES ('$nome', '$sobrenome', '$email', '$senha')";
 
     if(mysqli_query($connection, $sql)){
-        echo "usuário cadastrado com sucesso";
+        // echo "usuário cadastrado com sucesso";
+        header("Location: dashboard/dashboard.php");
     }else{
+        header("Location: /");
         echo "Erro" .mysqli_connect_error($connection);
     }
 
